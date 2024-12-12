@@ -1,0 +1,421 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./img/theater1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: 'Lato', sans-serif; /* Updated to Lato */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #4A2E3C;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #F3E8E3;
+  width: 100%;
+  position: fixed; /* Fix the header to the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Include padding in width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header .logo {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make the logo rounded */
+  border: 2px solid #fff; /* Optional: Add a border for better visibility */
+  padding: 5px; /* Add padding inside the border */
+  margin-right: 20px; /* Space from adjacent elements */
+  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+header .logo:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #F3E8E3;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #6E465E;
+}
+
+.icon-group {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-group i {
+  font-size: 1.5rem;
+  color: #F3E8E3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon-group i:hover {
+  color: #C7A6B1;
+}
+
+.recommend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 70px; /* Adjusted margin to avoid overlap with fixed header */
+}
+
+.recommend-container h1 {
+    font-size: 2.5rem; /* Increased font size for prominence */
+    margin-bottom: 1.5rem; /* Increased margin for better separation */
+}
+
+#recommendForm {
+    display: flex;
+    align-items: center; /* Aligns text box and button horizontally */
+    gap: 1rem; /* Space between text box and button */
+    width: 100%;
+    max-width: 500px; /* Increased max width for more room */
+    margin-bottom: 20px; /* Ensures spacing below the form */
+}
+
+#movieInput {
+    flex: 1; /* Takes up available space */
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff; /* White background for better readability */
+    color: #333; /* Dark text color for contrast */
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.recommend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusted minmax value */
+    gap: 1rem; /* Increased gap for better spacing */
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px; /* Increased max width for more content visibility */
+    transition: all 0.5s ease; /* Smooth transition for grid layout changes */
+}
+
+.recommend-block {
+    background-color: #fff;
+    padding: 0.5rem; /* Adjusted padding for better balance */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    text-align: center;
+    font-size: 0.9rem; /* Increased font size for better readability */
+    font-weight: bold;
+    color: #414141; /* Added text color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-bottom: 10px; /* Added margin bottom for pixel space */
+}
+
+.recommend-block:hover {
+    transform: translateY(-6px); /* Increased hover effect for prominence */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    background-color: #f8f8f8;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4A2E3C;
+    color: #F3E8E3;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 2px solid #6E465E;
+    box-sizing: border-box; /* Include padding in width */
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+footer .left-column, footer .right-column {
+    flex: 1;
+    margin: 10px;
+}
+
+footer .left-column p {
+    margin-bottom: 10px;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+footer .social-icons a {
+    color: #F3E8E3;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #C7A6B1;
+}
+
+footer .contact-info {
+    margin-bottom: 20px;
+}
+
+footer .contact-info i {
+    margin-right: 10px;
+}
+
+footer .latest-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .post {
+    background-color: #292929;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer .post img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer .post h3 {
+    margin: 10px 0;
+}
+
+footer .post p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+footer .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* White background for readability */
+    color: #333; /* Dark text color for contrast */
+}
+
+footer .newsletter button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .marquee-content {
+        animation-duration: 30s;
+    }
+
+    .row, .row1, .row2 {
+        flex-direction: column;
+    }
+
+    .column, .column1, .column2 {
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+    }
+    
+    .social-icons a {
+        margin-right: 10px;
+    }
+    
+    .right-column {
+        text-align: right;
+    }
+    
+    .contact-info div {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-group {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .full-width-img {
+        margin: 15px 0;
+    }
+}
+
+/*=============== FOOTER STYLES ===============*/
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: "Poppins", sans-serif;
+    transition: 0.5s;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer__container {
+    max-width: 968px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.footer__title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: darkgray;
+    font-size: 0.813rem;
+}
+
+.footer__links {
+    list-style: none;
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.footer__social {
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+    color: rgb(213, 213, 213);
+}
+
+.footer__social-link {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.footer__copy {
+    margin-top: 6rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 360px) {
+    .footer {
+        padding: 3.5rem 0 1rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .footer {
+        padding: 6rem 0 2rem;
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .footer__container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer__social {
+        align-items: flex-start;
+    }
+
+    .footer__social-link {
+        font-size: 1.45rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer__container {
+        column-gap: 3rem;
+    }
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!-- New CSS file for movie seat booking -->
+    <style>
+        .booking-section {
+            display: block;
+            margin-top: 120px;
+        }
+        
+        .movie-container {
+            display: block;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        select {
+            display: block;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .booking-section, .movie-container, label, select {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .movie-container label, 
+        .movie-container select, 
+        .booking-content .heading, 
+        .text {
+            color: black;
+        }
+
+        .showcase small {
+            color: black;
+        }
+
+        /* Button Styles */
+        .make-payment-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .make-payment-btn:hover {
+            background-color: darkgreen;
+        }
+
+        .make-payment-btn:active {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='/img/codedot_logo.gif') }}" alt="Logo" class="logo">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{{ url_for('movies') }}">Movies</a></li>
+                <li><a href="{{ url_for('booking') }}">Bookings</a></li>
+                <li><a href="{{ url_for('recommend_movie') }}">Recommend Movie</a></li>
+                <li><a href="{{ url_for('food') }}">Food Court</a></li>
+                <li><a href="{{ url_for('login') }}">Log in</a></li>
+            </ul>
+        </nav>
+        <div class="icon-group">
+            <i class="fa-sharp fa-solid fa-magnifying-glass" aria-label="Search"></i>
+            <i class="fa-regular fa-user" aria-label="User"></i>
+            <i class="fa-sharp fa-solid fa-cart-shopping" aria-label="Cart"></i>
+        </div>
+    </header>
+    <main>
+        <section class="booking-section">
+            <div class="movie-container">
+                <label>Select a movie:</label>
+                <select id="movie">
+                    <option value="200">Avatar (RS.200)</option>
+                    <option value="220">Abhiyum Naanum (RS.220)</option>
+                    <option value="320">Ant Man (RS.320)</option>
+                    <option value="250">RRR (RS.250)</option>
+                    <option value="225">Bool Boolaiya (RS.225)</option>
+                    <option value="230">JK Hor (RS.230)</option>
+                    <option value="190">Marvel (RS.190)</option>
+                    <option value="200">Mummy (RS.200)</option>
+                    <option value="250">Nails (RS.250)</option>
+                    <option value="230">Sachin (RS.230)</option>
+                    <option value="235">ESmart (RS.235)</option>
+                    <option value="200">Silent (RS.200)</option>
+                    <option value="240">Okok (RS.240)</option>
+                    <option value="150">Tanhaji (RS.150)</option>
+                    <option value="201">Ten (RS.201)</option>
+                    <option value="260">Thor (RS.260)</option>
+                    <option value="270">Spider Man (RS.270)</option>
+                    <option value="245">Master Vijay (RS.245)</option>
+                    <option value="200">Wakanda (RS.200)</option>
+                    <option value="199">War (RS.199)</option>
+                    <option value="215">Yodha (RS.215)</option>
+                </select>
+            </div>
+
+            <div class="booking-content">
+                <h1 class="heading">Available Movies</h1>
+
+                <!-- Movie Seat Booking Section -->
+                <ul class="showcase">
+                    <li>
+                        <div class="seat"></div>
+                        <small>Available</small>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <small>Selected</small>
+                    </li>
+                    <li>
+                        <div class="seat sold"></div>
+                        <small>Soldout</small>
+                    </li>
+                </ul>
+                <div class="container">
+                    <div class="screen"></div>
+
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                    </div>
+                    <div class="row">
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                        <div class="seat sold"></div>
+                        <div class="seat"></div>
+                    </div>
+                </div>
+
+                <p class="text">
+                    You have selected <span id="count">0</span> seat(s) for a price of RS.<span id="total">0</span>
+                </p>
+
+                <!-- Make Payment Button -->
+                <button class="make-payment-btn" onclick="makePayment()">Make Payment</button>
+            </div>
+        </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <h3 class="footer__title">Our Services</h3>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Support</a></li>
+                    <li><a href="#" class="footer__link">Donate</a></li>
+                    <li><a href="#" class="footer__link">Report a bug</a></li>
+                    <li><a href="#" class="footer__link">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Our Company</h3>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Blog</a></li>
+                    <li><a href="#" class="footer__link">Our mission</a></li>
+                    <li><a href="#" class="footer__link">Get in touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Community</h3>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Support</a></li>
+                    <li><a href="#" class="footer__link">Questions</a></li>
+                    <li><a href="#" class="footer__link">Usage help</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__social">
+                <a href="#" class="footer__social-link"><i class="bx bxl-facebook-circle"></i></a>
+                <a href="#" class="footer__social-link"><i class="bx bxl-github"></i></a>
+                <a href="#" class="footer__social-link"><i class="bx bxl-instagram"></i></a>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; by Code dot, All rights reserved.</p>
+    </footer>
+    <script>
+        const container = document.querySelector(".container");
+        const seats = document.querySelectorAll(".row .seat:not(.sold)");
+        const count = document.getElementById("count");
+        const total = document.getElementById("total");
+        const movieSelect = document.getElementById("movie");
+
+        populateUI();
+
+        let ticketPrice = +movieSelect.value;
+
+        // Save selected movie index and price
+        function setMovieData(movieIndex, moviePrice) {
+          localStorage.setItem("selectedMovieIndex", movieIndex);
+          localStorage.setItem("selectedMoviePrice", moviePrice);
+        }
+
+        // Update total and count
+        function updateSelectedCount() {
+          const selectedSeats = document.querySelectorAll(".row .seat.selected");
+
+          const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
+
+          localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+
+          const selectedSeatsCount = selectedSeats.length;
+
+          count.innerText = selectedSeatsCount;
+          total.innerText = selectedSeatsCount * ticketPrice;
+
+          setMovieData(movieSelect.selectedIndex, movieSelect.value);
+        }
+
+        // Get data from localstorage and populate UI
+        function populateUI() {
+          const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+
+          if (selectedSeats !== null && selectedSeats.length > 0) {
+            seats.forEach((seat, index) => {
+              if (selectedSeats.indexOf(index) > -1) {
+                seat.classList.add("selected");
+              }
+            });
+          }
+
+          const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
+
+          if (selectedMovieIndex !== null) {
+            movieSelect.selectedIndex = selectedMovieIndex;
+          }
+        }
+
+        // Movie select event
+        movieSelect.addEventListener("change", (e) => {
+          ticketPrice = +e.target.value;
+          setMovieData(e.target.selectedIndex, e.target.value);
+          updateSelectedCount();
+        });
+
+        // Seat click event
+        container.addEventListener("click", (e) => {
+          if (
+            e.target.classList.contains("seat") &&
+            !e.target.classList.contains("sold")
+          ) {
+            e.target.classList.toggle("selected");
+
+            updateSelectedCount();
+          }
+        });
+
+        // Initial count and total set
+        updateSelectedCount();
+
+        // Make Payment Button Function
+        function makePayment() {
+          const selectedSeatsCount = count.innerText;
+          const totalAmount = total.innerText;
+
+          alert(`Your number of seats: ${selectedSeatsCount}\nTotal amount: RS.${totalAmount}\nPayment done.`);
+        }
+    </script>
+</body>
+</html>
