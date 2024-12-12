@@ -1,1 +1,6 @@
-# movie_booking_system-codedot
+<<<<<<< HEAD
+Your local changes
+=======
+Changes from the remote repository
+>>>>>>> [commit-hash]
+
