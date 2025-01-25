@@ -4,6 +4,18 @@ Welcome to the **Movie Booking and Recommendation System**! This project is a on
 
 ---
 
+## 🎖️ Achievements
+
+### 1. Mercer | Mettl StackHack 2.0
+🏆 **Top 15 Teams out of 100** in Mercer | Mettl's full-stack coding hackathon.  
+Developed a movie booking and recommendation system with:
+- **Personalized recommendations** using TF-IDF and cosine similarity.
+- **Real-time ticket booking** with dynamic seat selection.
+
+![Team Collaboration](static/img/hackathon_photo.png)  
+*Our team presenting the movie booking system at StackHack 2.0.*
+
+---
 ## 🚀 Features
 
 ### 1. 🎬 **Movie Recommendation Engine**
